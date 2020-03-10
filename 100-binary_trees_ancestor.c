@@ -35,8 +35,12 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		for (i = 0; i < h; i++)
 		{
 			if (cousin2 == c1_ancestors[i])
+			{
+				free(c1_ancestors);
 				return (cousin2);
+			}
 		}
 	}
+	free(c1_ancestors);
 	return (NULL);
 }
