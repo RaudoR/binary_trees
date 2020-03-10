@@ -12,6 +12,13 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	return (tree_is_perfect_help(tree, depth, 0));
 }
 
+/**
+ * tree_is_perfect_help - checks if a binary tree is perfect
+ * @tree: pointer to the root
+ * @depth: the max left-most depth of the tree from the root
+ * @level: the current level we are checking
+ * Return: 1 if perfect, 0 if not
+ */
 int tree_is_perfect_help(const binary_tree_t *tree, int depth, int level)
 {
 	if (tree == NULL)
@@ -29,6 +36,11 @@ int tree_is_perfect_help(const binary_tree_t *tree, int depth, int level)
 		tree_is_perfect_help(tree->right, depth, level + 1));
 }
 
+/**
+ * binary_tree_left_max_depth - finds the max depth of the left most branch
+ * @tree: pointer to the root node
+ * Return: the depth
+ */
 int binary_tree_left_max_depth(const binary_tree_t *tree)
 {
 	int depth = 0;
