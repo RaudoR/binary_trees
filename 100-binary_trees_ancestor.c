@@ -33,7 +33,6 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	/* Compares cousin2's parents to array */
 	while (cousin2)
 	{
-		cousin2 = cousin2->parent;
 		for (i = 0; i < h; i++)
 		{
 			if (cousin2 == c1_ancestors[i])
@@ -42,6 +41,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 				return (cousin2);
 			}
 		}
+		cousin2 = cousin2->parent;
 	}
 	free(c1_ancestors);
 	return (NULL);
