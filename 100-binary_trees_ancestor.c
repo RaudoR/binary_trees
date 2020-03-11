@@ -14,6 +14,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	binary_tree_t **c1_ancestors;
 	int h, i;
 
+	if (first == NULL || second == NULL)
+		return (NULL);
+
 	cousin1 = (binary_tree_t *)first;
 	cousin2 = (binary_tree_t *)second;
 	/* Create an array of all first's parents */
