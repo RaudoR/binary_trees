@@ -12,7 +12,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	int max_depth, max_left, i;
 
 	if (tree == NULL)
-		return (1);
+		return (0);
 	/* Find overall max depth, and left max depth */
 	max_depth = find_max_depth(tree);
 	root = (binary_tree_t *)tree;
