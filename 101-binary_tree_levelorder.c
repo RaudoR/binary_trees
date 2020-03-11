@@ -21,7 +21,7 @@ size_t binary_tree_height(const binary_tree_t *tree)
 }
 
 /**
- * printer - prints the level where you are at.
+ * print - prints the level where you are at.
  * @tree: the input root address
  * @func: input func address
  * @level: height of node to be printed
