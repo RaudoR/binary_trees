@@ -57,6 +57,12 @@ void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
 
 
 int binary_tree_is_complete(const binary_tree_t *tree);
+int find_max_depth(const binary_tree_t *root);
+void comp_fill_array(binary_tree_t **bt_array, binary_tree_t *root, int depth);
+void comp_fill_array_help(binary_tree_t **bt_array, binary_tree_t *node,
+		int target, int depth, int *idx);
+int comp_gap_check(binary_tree_t **bt_array, int size);
+
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
