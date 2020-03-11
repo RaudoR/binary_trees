@@ -7,6 +7,8 @@
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (tree == NULL)
+		return (0);
 	return (bt_is_bst_helper((binary_tree_t *)tree, INT_MIN, INT_MAX));
 }
 
