@@ -1,6 +1,6 @@
 # Binary Trees
 A binary tree is a rooted tree that is also an ordered in which every node has at most two children.
-## Descriptin
+## Description
 This project consists of:
 - What is a binary tree
 - What is the difference between a binary tree and a Binary Search Tree
