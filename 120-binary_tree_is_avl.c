@@ -34,19 +34,6 @@ int bt_is_bst_helper(binary_tree_t *node, int min, int max)
 
 
 /**
- * max - helper function that returns max value of 2 ints
- * @x: int 1
- * @y: int 2
- * Return: maximum between 2 values
- */
-
-int max(int x, int y)
-{
-
-	return ((x >= y) ? x : y);
-}
-
-/**
  * height - returns height of a node
  * @tree: binary_tree_t node to search
  * Return: Height as an int, 0 if NULL
@@ -58,7 +45,10 @@ int height(binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	return (1 + max(height(tree->left), height(tree->right)));
+	if (height(tree->left) >= height(tree->right))
+		return (height(tree->left) + 1);
+
+	return (1 + height(tree->right));
 }
 
 /**
