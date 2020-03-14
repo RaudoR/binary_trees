@@ -1,4 +1,4 @@
-# Binary Trees
+B# Binary Trees
 A binary tree is a rooted tree that is also an ordered in which every node has at most two children.
 ## Description
 This project consists of:
@@ -8,6 +8,5 @@ This project consists of:
 - What are the depth, the height, the size of a binary tree
 - What are the different traversal methods to go through a binary tree
 - What is a complete, a full, a perfect, a balanced binary tree
-## 
 ## Authors
 Travis Bearden | Robert Deprizio | Raudo Rivas
