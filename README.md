@@ -9,4 +9,4 @@ This project consists of:
 - What are the different traversal methods to go through a binary tree
 - What is a complete, a full, a perfect, a balanced binary tree
 ## Authors
-Travis Bearden [Github](https://github.com/Beardocracy) | Robert Deprizio [Github](https://github.com/BD20171998) | Raudo Rivas [Github](https://github.com/RaudoR)
+[Travis Bearden](https://github.com/Beardocracy) | [Robert Deprizio](https://github.com/BD20171998) | [Raudo Rivas](https://github.com/RaudoR)
