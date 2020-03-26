@@ -2,35 +2,33 @@
 
 /**
  * avl_rebalance - helper func that rebalances the AVL tree when needed
- * @tree: double pointer to the root node of the BST to insert the value
- * @val: value to store in the node to be inserted
+ * @tree: double pointer to the root node to be checked for rebalancing
+ * @value: value to store in the node to be inserted
  * @bal: int for measure of the balance factor of the node given
  * Return: pointer to the created node, or tree otherwise
  */
-avl_t *avl_rebalance(avl_t **tree, int val, int bal)
+
+avl_t *avl_rebalance(avl_t **tree, int bal, int value)
 {
+	if (bal > 1 && value < (*tree)->left->n)
+		*tree = binary_tree_rotate_right(*tree);
 
-	if (bal > 1 && val < (*tree)->left->n)
-		return (binary_tree_rotate_right(*tree));
+	else if (bal < -1 && value > (*tree)->right->n)
+		*tree = binary_tree_rotate_left(*tree);
 
-	if (bal < -1 && val > (*tree)->right->n)
-		return (binary_tree_rotate_left(*tree));
-
-	if (bal > 1 && val > (*tree)->left->n)
+	else if (bal > 1 && value > (*tree)->left->n)
 	{
 		(*tree)->left = binary_tree_rotate_left((*tree)->left);
-		return (binary_tree_rotate_right(*tree));
+		*tree = binary_tree_rotate_right(*tree);
 	}
 
-	if (bal < -1 && val < (*tree)->right->n)
+	else if (bal < -1 && value < (*tree)->right->n)
 	{
 		(*tree)->right = binary_tree_rotate_right((*tree)->right);
-		return (binary_tree_rotate_left(*tree));
+		*tree = binary_tree_rotate_left(*tree);
 	}
-
 	return (*tree);
 }
-
 
 /**
  * avl_insert2 - helper function that assigns and rebalances nodes for AVL tree
@@ -55,7 +53,7 @@ avl_t *avl_insert2(avl_t **tree, int value, avl_t **ret)
 		return (l);
 	}
 
-	else if (value > (*tree)->n)
+	if (value > (*tree)->n)
 	{
 		r = avl_insert2(&(*tree)->right, value, ret);
 		(*tree)->right = r;
@@ -71,7 +69,9 @@ avl_t *avl_insert2(avl_t **tree, int value, avl_t **ret)
 
 	bal = binary_tree_balance(*tree);
 
-	return (avl_rebalance(tree, value, bal));
+	*tree = avl_rebalance(tree, bal, value);
+
+	return (*tree);
 }
 
 /**
