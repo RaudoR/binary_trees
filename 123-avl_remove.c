@@ -52,6 +52,7 @@ avl_t *rebalancer(avl_t *root, int bal)
 
 /**
  * avl_remove - function that removes a node from an AVL tree
+ * https://www.geeksforgeeks.org/avl-tree-set-2-deletion/
  * @root: pointer to the root node of the tree for removing a node
  * @value: value to remove in the tree
  * Return: pointer to the new root node of the tree after removing the desired
