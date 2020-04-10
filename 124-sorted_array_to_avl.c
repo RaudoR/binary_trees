@@ -11,19 +11,14 @@
 avl_t *sorted_array_to_avl2(int *arr, int start, int end)
 {
 	int mid;
-	avl_t *root, *temp;
+	avl_t *root;
 
 	if (start > end)
 		return (NULL);
 
 	mid = start + (end - start) / 2;
 
-	temp = malloc(sizeof(avl_t));
-	temp->parent = temp;
-
-	root = binary_tree_node(temp, arr[mid]);
-
-	free(temp);
+	root = binary_tree_node(NULL, arr[mid]);
 
 	root->left = sorted_array_to_avl2(arr, start, mid - 1);
 
