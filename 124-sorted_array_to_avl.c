@@ -3,17 +3,17 @@
 /**
  * sorted_array_to_avl2 - main function that adds nodes to create an AVL tree
  * @arr:  pointer to the array to be converted
- * @start: beginning index of size_t for current recursion
- * @end: ending index of size_t for current recursion
+ * @start: beginning index of type int for current recursion
+ * @end: ending index of type int for current recursion
  * Return: pointer to the root node of the created AVL tree
  */
 
-avl_t *sorted_array_to_avl2(int *arr, size_t start, size_t end)
+avl_t *sorted_array_to_avl2(int *arr, int start, int end)
 {
-	size_t mid;
+	int mid;
 	avl_t *root, *temp;
 
-	if (start - 1 == end)
+	if (start > end)
 		return (NULL);
 
 	mid = start + (end - start) / 2;
@@ -66,7 +66,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 		return (node);
 	}
 
-	node = sorted_array_to_avl2(array, 0, size - 1);
+	node = sorted_array_to_avl2(array, 0, (int) size - 1);
 
 	return (node);
 }
